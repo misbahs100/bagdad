@@ -27,6 +27,7 @@ export function UpdateUser({ id }: { id: string }) {
 
 export function DeleteUser({ id }: { id: string }) {
   async function handleDelete(formData: FormData) {
+    "use server";
     await deleteUser(id);
   }
 

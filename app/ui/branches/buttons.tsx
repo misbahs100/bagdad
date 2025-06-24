@@ -26,10 +26,13 @@ export function UpdateBranch({ id }: { id: string }) {
 }
 
 export function DeleteBranch({ id }: { id: string }) {
-  const deleteBranchWithId = deleteOffice.bind(null, id);
+  async function handleDelete(formData: FormData) {
+    "use server";
+    await deleteOffice(id);
+  }
 
   return (
-    <form action={deleteBranchWithId}>
+    <form action={handleDelete}>
       <button type="submit" className="rounded-md border p-2 hover:bg-red-100">
         <span className="sr-only">Delete</span>
         <TrashIcon className="w-4" />
