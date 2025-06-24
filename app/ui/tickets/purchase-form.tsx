@@ -138,7 +138,8 @@ export default function PurchaseTicketForm() {
               <p className="text-red-500 text-sm mt-1">{state.errors.route}</p>
             )}
           </div>
-
+        </div>
+        <div className="flex flex-wrap lg:flex-nowrap gap-2">
           {/* PNR */}
           <div className="mb-4">
             <label htmlFor="pnr" className="mb-2 block text-sm font-medium">
@@ -186,7 +187,9 @@ export default function PurchaseTicketForm() {
               <p className="text-red-500 text-sm mt-1">{state.errors.pax}</p>
             )}
           </div>
+        </div>
 
+        <div className="flex flex-wrap lg:flex-nowrap gap-2">
           {/* buying price */}
           <div className="mb-4">
             <label
@@ -217,7 +220,7 @@ export default function PurchaseTicketForm() {
             )}
           </div>
 
-            {/* selling price */}
+          {/* selling price */}
           <div className="mb-4">
             <label
               htmlFor="selling_price"
