@@ -10,7 +10,7 @@ export default async function Logo() {
     >
       {/* <PaperAirplaneIcon className="h-7 w-7 flex-shrink-0" /> */}
       <Image
-      src="/user-avatar.png"
+      src="/bagdad-logo.jpg"
       alt="Logo"
       className="h-7 w-7 flex-shrink-0"
       width={100}

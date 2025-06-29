@@ -13,7 +13,7 @@ export default function Page() {
       <div className="mt-4 flex grow flex-col gap-4 md:flex-row">
         <div className="flex flex-col justify-center gap-6 rounded-lg bg-gray-50 px-6 py-10 md:w-2/5 md:px-20">
           <p className={`text-xl text-gray-800 md:text-3xl md:leading-normal`}>
-            <strong>Welcome to the Transportation Accounting Management, </strong> powered by Prowesd IT.
+            <strong>Welcome to the Travel / Ticket Management System, </strong> powered by Prowesd IT.
           </p>
           <Link
             href="/login"
@@ -24,18 +24,18 @@ export default function Page() {
         </div>
         <div className="flex items-center justify-center p-6 md:w-3/5 md:px-28 md:py-12">
           <Image
-            src="/calculation.jpg"
+            src="/bagdad-cover.png"
             width={1000}
             height={760}
             className="hidden md:block"
-            alt="screenshot"
+            alt="Screenshot of the cover photo of social media profile"
           />
           <Image
-            src="/warehouse-2.png"
+            src="/bagdad-cover.png"
             width={560}
             height={620}
             className="block md:hidden"
-            alt="Screenshot of the dashboard project showing mobile version"
+            alt="Screenshot of the cover photo of social media profile showing mobile version"
           />
         </div>
       </div>

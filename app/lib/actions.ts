@@ -261,7 +261,6 @@ export async function createOffice(prevState: OfficeState, formData: FormData) {
   });
 
   if (!validatedFields.success) {
-    console.log("error:", validatedFields.error.flatten().fieldErrors);
     return {
       errors: validatedFields.error.flatten().fieldErrors,
       message: "Missing Fields. Failed to Create Office.",
@@ -328,7 +327,6 @@ export async function updateOffice(
   }
 
   const { name, address, manager, contact, bin } = validatedFields.data;
-  console.log(id, name, address, manager, contact, bin)
 
   try {
     const client = await clientPromise;

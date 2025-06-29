@@ -7,7 +7,6 @@ export default async function PassengerPagination({
   query: string;
 }) {
   const totalPages = await fetchPassengersPages(query);
-  console.log(totalPages)
 
   return (
     <div className="mt-5 flex w-full justify-center">

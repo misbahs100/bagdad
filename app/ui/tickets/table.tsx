@@ -72,7 +72,6 @@ export default function TicketsTable({ tickets, umrahGroups }: Props) {
       }
     });
 
-    console.log(ticket); // will only log once per click
   };
 
   const isSelected = (id: string) => selectedIds.has(id);
@@ -83,8 +82,8 @@ export default function TicketsTable({ tickets, umrahGroups }: Props) {
           <div className="relative px-4 py-6 space-y-4">
             {/* Sticky Top Bar */}
             {selectedIds.size > 0 && (
-              <div className="sticky top-0 z-10 bg-white dark:bg-gray-900 border-b py-2 px-4 flex items-center justify-between shadow">
-                <span className="font-semibold text-sm text-gray-700 dark:text-gray-200">
+              <div className="sticky top-0 z-10 bg-white  border-b py-2 px-4 flex items-center justify-between shadow">
+                <span className="font-semibold text-sm text-gray-700 ">
                   {selectedIds.size} PNR{selectedIds.size > 1 ? "s" : ""}{" "}
                   selected
                 </span>
@@ -130,7 +129,7 @@ export default function TicketsTable({ tickets, umrahGroups }: Props) {
               .sort((a, b) => b[0].localeCompare(a[0])) // latest date first
               .map(([date, items]) => (
                 <div key={date}>
-                  <h3 className="font-semibold text-gray-600 dark:text-gray-300 mb-2">
+                  <h3 className="font-semibold text-gray-600  mb-2">
                     {date}
                   </h3>
                   <ul className="space-y-1">
@@ -141,8 +140,8 @@ export default function TicketsTable({ tickets, umrahGroups }: Props) {
                         // key={ticket.id}
                         className={`flex items-center gap-2 p-2 rounded cursor-pointer border ${
                           isSelected(ticket.id)
-                            ? "bg-teal-100 hover:bg-teal-200 border-teal-400 dark:bg-teal-900 dark:border-teal-500"
-                            : "hover:bg-teal-100 dark:hover:bg-gray-800"
+                            ? "bg-teal-100 hover:bg-teal-200 border-teal-400  "
+                            : "hover:bg-teal-100 "
                         }`}
                         onClick={() => toggleSelect(ticket.id)}
                       >
@@ -152,17 +151,17 @@ export default function TicketsTable({ tickets, umrahGroups }: Props) {
                         <span className="w-5 text-sm text-gray-500">
                           {index + 1}.
                         </span>
-                        <span className="flex-1 text-sm text-gray-800 dark:text-gray-200">
+                        <span className="flex-1 text-sm text-gray-800 ">
                           <span className="uppercase">{ticket.route}</span> • <strong>{ticket.pnr}</strong> - {ticket.pax} PAX ({ticket.available} Available) • ৳ {ticket.ticket_price}/{ticket.selling_price}
                         </span>
-                        <span className="ml-1 flex-shrink text-sm text-gray-800 dark:text-gray-200">
+                        <span className="ml-1 flex-shrink text-sm text-gray-800 ">
                            <PencilIcon className="w-4" />
                         </span>
                       </li>
                       :
                       <li
                         // key={ticket.id}
-                        className={`flex items-center gap-2 p-2 rounded cursor-pointer border bg-gray-200 dark:hover:bg-gray-800 `}
+                        className={`flex items-center gap-2 p-2 rounded cursor-pointer border bg-gray-200  `}
                       >
                         <span className="w-5 text-sm text-gray-500">
                           {ticket.is_umrah && "U"}
@@ -170,10 +169,10 @@ export default function TicketsTable({ tickets, umrahGroups }: Props) {
                         <span className="w-5 text-sm text-gray-500">
                           {index + 1}.
                         </span>
-                        <span className="flex-1 text-sm text-gray-800 dark:text-gray-200">
+                        <span className="flex-1 text-sm text-gray-800 ">
                           <span className="uppercase">{ticket.route}</span> • <strong>{ticket.pnr}</strong> - {ticket.pax} PAX ({ticket.available} Available) • ৳ {ticket.ticket_price}/{ticket.selling_price}
                         </span>
-                        <span className="ml-1 flex-shrink text-sm text-gray-800 dark:text-gray-200">
+                        <span className="ml-1 flex-shrink text-sm text-gray-800 ">
                            <PencilIcon className="w-4" />
                         </span>
                       </li>  

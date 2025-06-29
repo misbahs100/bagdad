@@ -41,9 +41,9 @@ export default function PassengersTable({ passengers }: Props) {
   };
 
   return (
-    <div className="mt-6 overflow-x-auto rounded-lg border bg-white dark:bg-gray-900 shadow-sm">
+    <div className="mt-6 overflow-x-auto rounded-lg border bg-white shadow-sm">
       <table className="min-w-full divide-y divide-gray-200 text-sm text-left">
-        <thead className="bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">
+        <thead className="bg-gray-100  text-gray-700 ">
           <tr>
             <th className="px-4 py-3">Name</th>
             <th className="px-4 py-3">Passport</th>
@@ -54,10 +54,10 @@ export default function PassengersTable({ passengers }: Props) {
             <th className="px-4 py-3">Due (BDT)</th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-gray-100 dark:divide-gray-800">
+        <tbody className="divide-y divide-gray-100 ">
           {passengers.map((p) => (
             <React.Fragment key={p.id}>
-              <tr  className="hover:bg-gray-50 dark:hover:bg-gray-800">
+              <tr  className="hover:bg-gray-50 ">
                 <td className="px-4 py-3 font-medium">{p.name}</td>
                 <td className="px-4 py-3">{p.passport_no}</td>
                 <td className="px-4 py-3 uppercase">{p.route}</td>
@@ -83,7 +83,7 @@ export default function PassengersTable({ passengers }: Props) {
 
               {/* Expanded Row */}
               {openRows.has(p.id) && (
-                <tr className="bg-gray-50 dark:bg-gray-800 text-gray-700 dark:text-gray-300">
+                <tr className="bg-gray-50  text-gray-700 ">
                   <td colSpan={8} className="px-6 pb-4 pt-2">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
                       <div>

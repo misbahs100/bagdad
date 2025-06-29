@@ -17,7 +17,6 @@ export default async function TicketsTableServer({
   const umrahGroups = await fetchAllUmrahGroups();
   
   const filteredUmrahGroupsRaw = await fetchFilteredUmrahGroups(query, currentPage);
-  console.log(tickets);
 
   // Map Document[] to Ticket[] for each group
   const filteredUmrahGroups = filteredUmrahGroupsRaw.map((group: any) => ({

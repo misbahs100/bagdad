@@ -65,7 +65,7 @@ export default function UmrahGroupsTable({ tickets, umrahGroups }: Props) {
                 .sort((a, b) => b[0].localeCompare(a[0]))
                 .map(([month, groups]) => (
                   <div key={month}>
-                    <h3 className="text-base font-semibold text-gray-700 dark:text-gray-300 mb-3">
+                    <h3 className="text-base font-semibold text-gray-700  mb-3">
                       {new Date(`${month}-01`).toLocaleDateString("default", {
                         month: "long",
                         year: "numeric",
@@ -76,10 +76,10 @@ export default function UmrahGroupsTable({ tickets, umrahGroups }: Props) {
                         <div
                           key={group.id}
                           //   onClick={() => toggleSelect(group.id)}
-                          className={`border rounded-md p-4 transition hover:bg-gray-100 dark:hover:bg-gray-800`}
+                          className={`border rounded-md p-4 transition hover:bg-gray-100 `}
                         >
                           <div className="flex justify-between items-center mb-2">
-                            <h4 className="text-sm font-medium uppercase text-gray-700 dark:text-gray-200">
+                            <h4 className="text-sm font-medium uppercase text-gray-700 ">
                               {group.name}
                             </h4>
                             <div className="flex space-x-5">
@@ -87,7 +87,6 @@ export default function UmrahGroupsTable({ tickets, umrahGroups }: Props) {
                                 title="Add Passenger"
                                 className="w-4 h-4 text-gray-500 cursor-pointer"
                                 onClick={() => {
-                                  console.log("plus-clicked");
                                   setSelectedTickets(group.pnr_list);
                                   setShowSellTicketModal(true);
                                 }}
@@ -95,7 +94,6 @@ export default function UmrahGroupsTable({ tickets, umrahGroups }: Props) {
                               <PencilIcon
                                 title="Edit Group"
                                 className="w-4 h-4 text-gray-500 cursor-pointer"
-                                onClick={() => console.log("group-clicked")}
                               />
                             </div>
                           </div>
@@ -103,7 +101,7 @@ export default function UmrahGroupsTable({ tickets, umrahGroups }: Props) {
                             Created by: <strong>{group.created_by}</strong> on{" "}
                             {new Date(group.created_at).toLocaleDateString()}
                           </p>
-                          <ul className="text-sm text-gray-700 dark:text-gray-300 list-none list-inside mt-2">
+                          <ul className="text-sm text-gray-700  list-none list-inside mt-2">
                             {group.pnr_list.map((pnr, idx) => (
                               <li key={pnr.id}>
                                 <span className="mr-2 text-teal-600">

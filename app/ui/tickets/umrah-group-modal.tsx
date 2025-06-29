@@ -89,7 +89,6 @@ export function UmrahGroupModal({
   );
 
   const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    console.log("submitting");
     event.preventDefault();
     setIsLoading(true);
     startTransition(() => {
@@ -100,7 +99,6 @@ export function UmrahGroupModal({
 
   useEffect(() => {
   if (state.status === "success") {
-    console.log("success")
     setIsLoading(false);
     const timeout = setTimeout(() => {
       setShowUmrahGroupModal(false);
