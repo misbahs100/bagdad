@@ -31,7 +31,7 @@ export default function CreateUserForm() {
     useEffect(() => {
       if (state.message === "User created successfully.") {
         window.location.href = "/dashboard/users"; // Redirect on the client side
-      } else {
+      } else if(state.message !== null) {
         console.error(state.message);
       }
     }, [state.message]);
